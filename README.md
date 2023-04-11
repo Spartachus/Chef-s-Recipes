@@ -5,7 +5,7 @@ My Hackathon Project Showcase
 It's A Recipe App Showcase
 
 Check out the video presentations
-https://www.youtube.com/watch?v=Mxyf5yBsRYs
+https://youtu.be/fqk_jV2dkg0
 
 try it out aswell
 http://spartachus345.pythonanywhere.com/
