@@ -17,7 +17,7 @@
          <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
                <a class="navbar-brand" href="{{ url_for('hello_world') }}">
-               <img src="{{ url_for('static', filename='MattJack_Fairy_tale_red_panda_character_protagonist_20th_centur_4c1a0bb5-ce1b-4477-81c4-5100b4f200c6.png') }}"
+               <img class = "ndf" src="{{ url_for('static', filename='MattJack_Fairy_tale_red_panda_character_protagonist_20th_centur_4c1a0bb5-ce1b-4477-81c4-5100b4f200c6.png') }}"
                   alt="" width="30" height="24" class="d-inline-block align-text-top" />
                Chef's Recipes
                </a>
@@ -33,7 +33,7 @@
       <section class="mainn">
          <div class="bg img">
             <img src="{{ url_for('static', filename='Hodap_maximalist_recipesdismantle_b6664722-0c79-41d7-bb96-9f49ffabace0.png') }}" alt="" />
-            <div class="card textlm" style="width: 18rem">
+            <div class="card textlm d-none d-lg-block">
                <div class="card-body ">
                   <img src="{{ url_for('static', filename='DALL·E 2023-04-08 10.28.32 - an animated logo of a wooden fork and spoon.png') }}"
                      width="30" height="24" class="d-inline-block align-text-top" />
@@ -64,7 +64,7 @@
          <h1 class="dhi">
             Try This</h2>
             <div class="fkld">
-               <div class="card-group" style="width: 60rem;">
+               <div class="card-group" style="width: 80%;">
                   <div class="card ms-4">
                    <a href = "{{ url_for('pizza') }}">
                      <img src="{{ url_for('static', filename='DALL·E 2023-04-08 11.06.12 - pizza.png') }}" class="card-img-top" alt="...">
@@ -106,7 +106,7 @@
 
       </section>
       <footer class = "dghs">
-         <p>Made With ❤️ by Spartachus<br>
+         <p>Made With ❤️ by <a href = "https://github.com/Spartachus">Spartachus</a><br>
       </footer>
    </body>
 </html>

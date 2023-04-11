@@ -1,29 +1,34 @@
 .bg img{
     position: absolute;
+
+}
+.ndf{
+    width: 100%;
 }
 .textlm{
     position: absolute;
     margin-top: 15%;
     margin-left: 10%;
+    width:20%;
 }
 .space{
     margin-left: 3%;
 }
 .recipe{
     position: relative;
-    padding-top: 23cm;
-    padding-bottom: 2cm;
+    padding-top: 65%;
+    padding-bottom: 1%;
     text-align: center;
 }
 .fkld{
     text-align: center;
     margin-left: 15%;
-    margin-top: 1cm;
-    
+    margin-top: 1%;
+
 }
 .fgh{
-    padding-top:1cm ;
-    padding-bottom:1cm ;
+    padding-top:1% ;
+    padding-bottom:1% ;
 }
 .dghs{
     text-align: center;
@@ -38,7 +43,7 @@ body{
     margin-right: 30%;
     margin-left: 30%;
     margin-bottom: 3%;
-    
+
 }
 .vhnd{
     margin-left: 0.2cm;
@@ -48,12 +53,30 @@ body{
 }
 .manno{
     text-align: justify;
-    margin-left: 7cm;
-    margin-right: 7cm;
+    margin-left: 14%;
+    margin-right: 14%;
 }
 .recipes{
     position: relative;
-    padding-top: 2cm;
-    padding-bottom: 2cm;
+    padding-top: 5%;
+    padding-bottom: 5%;
     text-align: center;
+}
+
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+    .recipe{
+        position: relative;
+        padding-top: 100%;
+        padding-bottom: 5%;
+        text-align: center;
+    }
+
+.textlm{
+    position: absolute;
+    margin-top: 60%;
+    margin-left: 30%;
+    width:40%;
+    height:100%;
+}
 }
