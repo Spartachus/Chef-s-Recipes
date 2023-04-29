@@ -6,17 +6,20 @@ from email.message import EmailMessage
 import ssl
 import smtplib
 
+
 def configure():
   load_dotenv()
-  
+
 app = Flask(__name__)
+
+Email = []
 
 @app.route("/", methods=['POST','GET'])
 def hello_world():
     configure()
-    if request.method == 'POST':  
-      Api_Key = os.getenv("api_key") 
-      email_pass = os.getenv("email_password") 
+    if request.method == 'POST':
+      Api_Key = os.getenv("api_key")
+      email_pass = os.getenv("email_password")
       if request.form['submit_button'] == 'search_button':
         try:
             food = request.form['contact']
@@ -27,9 +30,9 @@ def hello_world():
             hvjc = requests.get(f"https://api.spoonacular.com/recipes/{food_id}/summary?apiKey={Api_Key}")
             ghnv = hvjc.json()
             content = ghnv["summary"]
-            return render_template("recipes.html",content = content,food = food) 
+            return render_template("recipes.html",content = content,food = food)
         except:
-          return render_template("failed.html") 
+          return render_template("failed.html")
       elif request.form['submit_button'] == 'random_button':
         id_food = requests.get(f"https://api.spoonacular.com/food/jokes/random?apiKey={Api_Key}&number=1")
         food_id_json = id_food.json()
@@ -39,14 +42,16 @@ def hello_world():
         ghnv = hvjc.json()
         sum = ghnv["text"]
 
-        return render_template("random.html",content = sdf,food_title = sum) 
+        return render_template("random.html",content = sdf,food_title = sum)
 
       elif request.form['submit_button'] == 'subscribe_button':
         try:
             food = request.form['flow']
             email_sender = "chef.recipes.io@gmail.com"
             email_reciever = food
+            Email.append(email_reciever)
             passcode = email_pass
+            print(Email)
 
             subject = "Thanks for subscribing"
             body = """
@@ -65,15 +70,15 @@ def hello_world():
             return render_template('success.html')
         except:
           return render_template('success.html')
-    return render_template('index.html')  
+    return render_template('index.html')
 
 
 @app.route("/pasta", methods=['POST','GET'])
 def pasta():
     configure()
-    if request.method == 'POST':  
-      Api_Key = os.getenv("api_key") 
-      email_pass = os.getenv("email_password") 
+    if request.method == 'POST':
+      Api_Key = os.getenv("api_key")
+      email_pass = os.getenv("email_password")
       if request.form['submit_button'] == 'search_button':
         try:
             food = request.form['contact']
@@ -84,9 +89,9 @@ def pasta():
             hvjc = requests.get(f"https://api.spoonacular.com/recipes/{food_id}/summary?apiKey={Api_Key}")
             ghnv = hvjc.json()
             content = ghnv["summary"]
-            return render_template("recipes.html",content = content,food = food) 
+            return render_template("recipes.html",content = content,food = food)
         except:
-          return render_template("failed.html") 
+          return render_template("failed.html")
       elif request.form['submit_button'] == 'random_button':
         id_food = requests.get(f"https://api.spoonacular.com/food/jokes/random?apiKey={Api_Key}&number=1")
         food_id_json = id_food.json()
@@ -96,7 +101,7 @@ def pasta():
         ghnv = hvjc.json()
         sum = ghnv["text"]
 
-        return render_template("random.html",content = sdf,food_title = sum) 
+        return render_template("random.html",content = sdf,food_title = sum)
 
       elif request.form['submit_button'] == 'subscribe_button':
         try:
@@ -122,14 +127,14 @@ def pasta():
             return render_template('success.html')
         except:
           return render_template('success.html')
-    return render_template('pasta.html')  
+    return render_template('pasta.html')
 
 @app.route("/pizza", methods=['POST','GET'])
 def pizza():
     configure()
-    if request.method == 'POST':  
-      Api_Key = os.getenv("api_key") 
-      email_pass = os.getenv("email_password") 
+    if request.method == 'POST':
+      Api_Key = os.getenv("api_key")
+      email_pass = os.getenv("email_password")
       if request.form['submit_button'] == 'search_button':
         try:
             food = request.form['contact']
@@ -140,9 +145,9 @@ def pizza():
             hvjc = requests.get(f"https://api.spoonacular.com/recipes/{food_id}/summary?apiKey={Api_Key}")
             ghnv = hvjc.json()
             content = ghnv["summary"]
-            return render_template("recipes.html",content = content,food = food) 
+            return render_template("recipes.html",content = content,food = food)
         except:
-          return render_template("failed.html") 
+          return render_template("failed.html")
       elif request.form['submit_button'] == 'random_button':
         id_food = requests.get(f"https://api.spoonacular.com/food/jokes/random?apiKey={Api_Key}&number=1")
         food_id_json = id_food.json()
@@ -152,7 +157,7 @@ def pizza():
         ghnv = hvjc.json()
         sum = ghnv["text"]
 
-        return render_template("random.html",content = sdf,food_title = sum) 
+        return render_template("random.html",content = sdf,food_title = sum)
 
       elif request.form['submit_button'] == 'subscribe_button':
         try:
@@ -178,14 +183,14 @@ def pizza():
             return render_template('success.html')
         except:
           return render_template('success.html')
-    return render_template('pizza.html')  
+    return render_template('pizza.html')
 
 @app.route("/burger", methods=['POST','GET'])
 def burger():
     configure()
-    if request.method == 'POST':  
-      Api_Key = os.getenv("api_key") 
-      email_pass = os.getenv("email_password") 
+    if request.method == 'POST':
+      Api_Key = os.getenv("api_key")
+      email_pass = os.getenv("email_password")
       if request.form['submit_button'] == 'search_button':
         try:
             food = request.form['contact']
@@ -196,9 +201,9 @@ def burger():
             hvjc = requests.get(f"https://api.spoonacular.com/recipes/{food_id}/summary?apiKey={Api_Key}")
             ghnv = hvjc.json()
             content = ghnv["summary"]
-            return render_template("recipes.html",content = content,food = food) 
+            return render_template("recipes.html",content = content,food = food)
         except:
-          return render_template("failed.html") 
+          return render_template("failed.html")
       elif request.form['submit_button'] == 'random_button':
         id_food = requests.get(f"https://api.spoonacular.com/food/jokes/random?apiKey={Api_Key}&number=1")
         food_id_json = id_food.json()
@@ -208,7 +213,7 @@ def burger():
         ghnv = hvjc.json()
         sum = ghnv["text"]
 
-        return render_template("random.html",content = sdf,food_title = sum) 
+        return render_template("random.html",content = sdf,food_title = sum)
 
       elif request.form['submit_button'] == 'subscribe_button':
         try:
@@ -234,7 +239,7 @@ def burger():
             return render_template('success.html')
         except:
           return render_template('success.html')
-    return render_template('burger.html')  
+    return render_template('burger.html')
 
 if __name__ == '__main__':
     app.run()
